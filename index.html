@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>3D Transformation</title>
+    <title>3D Transformation Demo</title>
 
     <style>
         body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        p {
+            color: #ccc;
+        }
+
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: black;
+            height: 70vh;
         }
 
         .scene {
@@ -23,8 +38,7 @@
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
-            transform: rotateX(30deg) rotateY(30deg);
-            animation: rotate 5s infinite linear;
+            animation: rotate 6s infinite linear;
         }
 
         .face {
@@ -33,6 +47,8 @@
             height: 200px;
             background: rgba(0, 255, 255, 0.7);
             border: 2px solid white;
+            line-height: 200px;
+            font-size: 20px;
         }
 
         .front  { transform: rotateY(0deg) translateZ(100px); }
@@ -46,21 +62,36 @@
             from { transform: rotateX(0deg) rotateY(0deg); }
             to   { transform: rotateX(360deg) rotateY(360deg); }
         }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
     </style>
 
 </head>
 <body>
 
-<div class="scene">
-    <div class="cube">
-        <div class="face front"></div>
-        <div class="face back"></div>
-        <div class="face right"></div>
-        <div class="face left"></div>
-        <div class="face top"></div>
-        <div class="face bottom"></div>
+<h1>3D Transformation Demo</h1>
+<p>Rotation of a cube using CSS 3D Transformations</p>
+
+<div class="container">
+    <div class="scene">
+        <div class="cube">
+            <div class="face front">Front</div>
+            <div class="face back">Back</div>
+            <div class="face right">Right</div>
+            <div class="face left">Left</div>
+            <div class="face top">Top</div>
+            <div class="face bottom">Bottom</div>
+        </div>
     </div>
 </div>
+
+<footer>
+    Created by Muhil | Computer Graphics Project
+</footer>
 
 </body>
 </html>
